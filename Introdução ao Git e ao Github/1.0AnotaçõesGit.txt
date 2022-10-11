@@ -1,0 +1,124 @@
+
+Git e GitHub
+
+Git - sistema de versionamento de código distribuido 
+
+
+-Controle de Versão 
+-Armazenamento em nuvem
+-Trabalho em equipe
+-Melhorar seu código 
+-Reconhecimento
+
+Comandos do git 
+
+commmand line interface - não apresenta uma interface gráfica para interação com o git, utiliza linhas de código 
+
+Windows 
+-cd  		(changing directory)              
+
+cd /nomeDaPasta sobe um nivel
+
+cd ..           retorna um nivel
+
+-dir		(directory)                    -- lista os diretorios (pastas) contidos 
+-mkdir		(makedirectory)
+-del					       -- deleta apenas arquivos 
+-rmdir          (removedirectory) 	       -- deleta o diretorio 
+
+
+
+
+-cls - limpa
+
+
+--Git por baixo dos panos ----------
+
+SHA1 - sistema de criptografia do arquivo, algoritmo de encriptogração 
+conjunto de 40 caracteres 
+
+openssl sha1 nomearquivo.txt 
+
+----Objetos internos do git ------
+ 
+1- Blobs ("bloco básico")
+Contém metadados do git 
+Tamanho do arquivo, tipo do arquivo 
+
+Possuem o sha1 do arquivo 
+
+2- Trees  ----- apontam para as blobs "armazenam as blobs"
+
+Tree       <tamanho>
+\0
+
+blob   sha1     nomedoarquivo
+
+
+3- Commits
+
+Objeto que dá sentido ao que esta sendo feito 
+
+Apontam para uma 
+tree
+parente
+autor
+mensagem
+
+---------Chaves SSH e Tokens ----------
+
+Atualização na parte de autenticação 
+anteriormente aceita apenas pelo email e senha do usuario
+
+1- Ssh entra como uma criptografia do protocolo ssh, gerando uma chave pública para o git e uma chave privada para o autor
+
+
+chave pública e privada 
+
+oferece mais segurança por conta da criptografia entre a máquina local e o repositorio  
+
+2- Token - utilizado no clone do protocolo https, forma de autenticação pedida para realizar o clone no protocolo https 
+
+
+-------Iniciando o git e criando um commit --------
+
+-git init
+
+-git add
+
+-git commit
+
+
+criou a pasta workspace, dentro da workspace criou um diretorio livro-receitas 
+entrou no diretorio e inicializou o git (git init)
+
+
+git init - inicializa o repositorio dentro do diretorio selecionado 
+
+Git identifica alterações no arquivos (modified) através da mudança na criptografia gerada (sha1) 
+
+untracked - arquivos que o git não tem ciencia ainda da existência 
+
+unmodified - possui uma criptografia 
+modified - apresenta uma alteração no arquivo, logo uma alteração no sha1
+
+git add - envia o arquivo para o staged - staging area  (aguardando um commit para enviar ao repositorio remoto)
+
+git commit - move os arquivos do staged ("area de espera") para o repositorio local 
+
+git status - apresenta as movimentações atuais dos arquivos 
+
+git config --list       carrega as configurações armazenadas no git 
+como user e name
+
+
+---------------git hub ------------
+git remote add origin   link_do_repositorio_do_github   inicializa o repositorio remoto, possibilitando posteriormente
+o envio atraves do git push 
+
+git push origin master 
+
+ 
+git remote add origin 
+git branch -M main
+git push -u origin main
